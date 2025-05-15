@@ -1,4 +1,3 @@
 @echo off
-set GRADLE_HOME=C:\path\to\gradle
-set PATH=%GRADLE_HOME%\bin;%PATH%
-gradle %*
+set DIR=%~dp0
+"%DIR%\gradle\wrapper\gradle-wrapper.bat" %*
