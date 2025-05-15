@@ -1,0 +1,5 @@
+#!/bin/sh
+# This is a generated file; do not edit or check into version control.
+export GRADLE_HOME=/path/to/gradle
+export PATH=$GRADLE_HOME/bin:$PATH
+gradle "$@"
