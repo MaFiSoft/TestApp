@@ -2,10 +2,14 @@
     package="com.MaFiSoft.TestApp">
 
     <application
-        android:label="Einkaufsliste"
+        android:label="TestApp"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
-        
+
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2">
+            
         <activity
             android:name=".MainActivity"
             android:exported="true"
