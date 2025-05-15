@@ -1,14 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.MaFiSoft.TestApp">
+
     <application
-        android:label="Test-App"
+        android:label="Einkaufsliste"
         android:icon="@mipmap/ic_launcher"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        android:usesCleartextTraffic="true">
+        
         <activity
             android:name=".MainActivity"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize"
-            android:launchMode="singleTask"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:windowSoftInputMode="adjustResize">
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
