@@ -1,0 +1,4 @@
+linter:
+  rules:
+    - avoid_print
+    - always_specify_types

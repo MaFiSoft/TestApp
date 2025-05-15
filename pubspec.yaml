@@ -1,0 +1,25 @@
+name: test_app
+description: Eine Test-App mit Farbwechseln und Untermenüs
+publish_to: 'none' # Entfernt Veröffentlichung auf pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Weitere Abhängigkeiten
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
