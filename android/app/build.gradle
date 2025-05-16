@@ -28,11 +28,16 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
-flutter {
-    source "../.."
-}
-
-// Erzwinge das Plugin-Typ für shared_preferences_android:
+// Plugin explizit als Android-Library deklarieren:
 project(':shared_preferences_android') {
     apply plugin: 'com.android.library'
+
+    android {
+        compileSdkVersion 33
+
+        defaultConfig {
+            minSdkVersion 21
+            targetSdkVersion 33
+        }
+    }
 }
