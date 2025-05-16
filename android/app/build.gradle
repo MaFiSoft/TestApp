@@ -1,6 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply from: "/Users/builder/programs/flutter/packages/flutter_tools/gradle/flutter.gradle"
+
+def localProperties = new Properties()
+def localPropertiesFile = new File(rootDir.parentFile, "local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader ->
+        localProperties.load(reader)
+    }
+}
+def flutterRoot = localProperties.getProperty("flutter.sdk")
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+// ALTER CODE: apply from: "/Users/builder/programs/flutter/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     namespace "com.MaFiSoft.TestApp"
