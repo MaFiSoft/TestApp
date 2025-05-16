@@ -31,3 +31,8 @@ dependencies {
 flutter {
     source "../.."
 }
+
+// Erzwinge das Plugin-Typ für shared_preferences_android:
+project(':shared_preferences_android') {
+    apply plugin: 'com.android.library'
+}
