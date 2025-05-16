@@ -1,1 +1,15 @@
 include ':app'
+
+def flutterProjectRoot = rootDir.getAbsoluteFile().getParentFile()
+
+def pluginsFile = new File(flutterProjectRoot, '.flutter-plugins')
+if (pluginsFile.exists()) {
+    pluginsFile.eachLine { line ->
+        def plugin = line.split('=')[0].trim()
+        if (plugin) {
+            include ":$plugin"
+            project(":$plugin").projectDir =
+                new File(flutterProjectRoot, '.dart_tool/flutter_build/$plugin')
+        }
+    }
+}
