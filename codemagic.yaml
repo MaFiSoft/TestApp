@@ -5,6 +5,9 @@ workflows:
     environment:
       flutter: 3.7.0
     scripts:
+      - name: Upgrade packages
+        script: |
+          flutter pub upgrade
       - name: Get dependencies
         script: |
           flutter pub get
