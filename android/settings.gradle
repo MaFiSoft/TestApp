@@ -1,18 +1,5 @@
 include ':app'
+include ':shared_preferences_android'
 
-def flutterProjectRoot = rootDir.getAbsoluteFile().getParentFile()
-def pluginsFile = new File(flutterProjectRoot, '.flutter-plugins')
-
-if (pluginsFile.exists()) {
-    pluginsFile.eachLine { line ->
-        line = line.trim()
-        if (!line.startsWith('#') && line.contains('=')) {
-            def plugin = line.split('=')[0].trim()
-            if (plugin) {
-                include ":$plugin"
-                project(":$plugin").projectDir =
-                    new File(flutterProjectRoot, '.dart_tool/flutter_build/$plugin')
-            }
-        }
-    }
-}
+project(':shared_preferences_android').projectDir =
+    new File(rootDir, '../.pub-cache/hosted/pub.dartlang.org/shared_preferences_android-2.1.1/android')
