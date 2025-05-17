@@ -7,8 +7,8 @@ workflows:
     scripts:
       - name: Set up app/build.gradle
         script: | 
-        set -ex 
-        printenv
+          set -ex 
+          printenv
       - name: Upgrade packages
         script: |
           flutter pub upgrade
