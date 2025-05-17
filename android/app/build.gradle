@@ -9,12 +9,23 @@ apply plugin: 'kotlin-android'
 //    }
 //}
 //def flutterRoot = localProperties.getProperty("flutter.sdk")
-def flutterRoot = "/Users/builder/programs/flutter"
 
-apply from: "$flutter_Root/packages/flutter_tools/gradle/flutter.gradle"
-//original: apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+//def flutterRoot = "/Users/builder/programs/flutter"
 
-// ALTER CODE: apply from: "/Users/builder/programs/flutter/packages/flutter_tools/gradle/flutter.gradle"
+//apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+
+// Versuch, Pfad aus Umgebungsvariable zu extrahieren
+def flutterSdkPath = System.getenv("PATH")
+        ?.split(":")
+        ?.find { it.contains("flutter/bin") }
+        ?.replace("/bin", "")
+
+if (flutterSdkPath == null) {
+    throw new GradleException("Flutter SDK path could not be determined from PATH")
+}
+
+apply from: "$flutterSdkPath/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     namespace "com.MaFiSoft.TestApp"
