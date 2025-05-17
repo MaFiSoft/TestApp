@@ -54,4 +54,6 @@ dependencies {
 }
 
 // Pfad zum Flutter-Projekt angeben (damit flutter.gradle weiß, wo main.dart ist)
-project.ext.flutterProjectRoot = rootProject.projectDir.getParentFile()
+//project.ext.flutterProjectRoot = rootProject.projectDir.getParentFile()
+project.ext.flutterProjectRoot = rootDir.getAbsoluteFile().getParentFile()
+project.ext.flutterTarget = "lib/main.dart"
