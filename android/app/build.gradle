@@ -9,9 +9,10 @@ apply plugin: 'kotlin-android'
 //    }
 //}
 //def flutterRoot = localProperties.getProperty("flutter.sdk")
-def flutterRoot = "/Users/builder/programs/flutter"
+//def flutterRoot = "/Users/builder/programs/flutter"
 
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply from: "$flutter_Root/packages/flutter_tools/gradle/flutter.gradle"
+//original: apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 // ALTER CODE: apply from: "/Users/builder/programs/flutter/packages/flutter_tools/gradle/flutter.gradle"
 
