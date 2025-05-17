@@ -52,3 +52,6 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
+// Pfad zum Flutter-Projekt angeben (damit flutter.gradle weiß, wo main.dart ist)
+project.ext.flutterProjectRoot = rootProject.projectDir.getParentFile()
