@@ -7,7 +7,6 @@ workflows:
     scripts:
       - name: Set up app/build.gradle
         script: | 
-        #!/bin/sh 
         set -ex 
         printenv
       - name: Upgrade packages
