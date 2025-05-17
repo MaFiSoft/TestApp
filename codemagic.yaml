@@ -5,6 +5,11 @@ workflows:
     environment:
       flutter: 3.7.0
     scripts:
+      - name: Set up app/build.gradle
+        script: | 
+        #!/bin/sh 
+        set -ex 
+        printenv
       - name: Upgrade packages
         script: |
           flutter pub upgrade
